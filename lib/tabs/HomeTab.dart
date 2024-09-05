@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/screens/Home_Doctors.dart';
 import 'package:test/styles/colors.dart';
 import 'package:test/styles/styles.dart';
 
@@ -94,12 +95,13 @@ class HomeTab extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            for (var doctor in doctors)
-              TopDoctorCard(
-                img: doctor['img'],
-                doctorName: doctor['doctorName'],
-                doctorTitle: doctor['doctorTitle'],
-              )
+            //for (var doctor in doctors)
+            //TopDoctorCard(
+            ///img: doctor['img'],
+            //doctorName: doctor['doctorName'],
+            //  doctorTitle: doctor['doctorTitle'],
+            //)
+            HomeDoctors(),
           ],
         ),
       ),
@@ -128,13 +130,13 @@ class TopDoctorCard extends StatelessWidget {
         },
         child: Row(
           children: [
-            Container(
-              color: Color(MyColors.grey01),
-              child: Image(
-                width: 100,
-                image: AssetImage(img),
-              ),
-            ),
+            //Container(
+            // color: Color(MyColors.grey01),
+            // child: Image(
+            //  width: 100,
+            //  image: NetworkImage(img),
+            //),
+            //  ),
             SizedBox(
               width: 10,
             ),
@@ -217,7 +219,8 @@ class AppointmentCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          backgroundImage: AssetImage('assets/doctor01.jpeg'),
+                          backgroundImage: NetworkImage(
+                              'https://randomuser.me/api/portraits/men/83.jpg'),
                         ),
                         SizedBox(
                           width: 10,
@@ -468,13 +471,14 @@ class UserIntro extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             Text(
-              'Brad King 👋',
+              'Mswati 👋',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ],
         ),
         const CircleAvatar(
-          backgroundImage: AssetImage('assets/person.jpeg'),
+          backgroundImage:
+              NetworkImage('https://randomuser.me/api/portraits/lego/4.jpg'),
         )
       ],
     );
